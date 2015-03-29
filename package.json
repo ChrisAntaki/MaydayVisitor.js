@@ -1,0 +1,21 @@
+{
+  "name": "front-end-shell",
+  "version": "1.0.0",
+  "description": "The start of an HTML5 front end.",
+  "main": "gulpfile.js",
+  "scripts": {
+    "hey": "echo hey"
+  },
+  "author": "Chris Antaki",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:ChrisAntaki/front-end-shell.git"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "browserify": "^9.0.3",
+    "gulp": "^3.8.11",
+    "gulp-less": "^3.0.2",
+    "vinyl-transform": "^1.0.0"
+  }
+}
