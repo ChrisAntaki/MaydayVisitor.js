@@ -3,10 +3,6 @@ var MaydayVisitor = require('./MaydayVisitor');
 
 window.visitor = new MaydayVisitor();
 
-window.updateLog = function() {
-    document.querySelector('#log').textContent = JSON.stringify(visitor.info);
-};
-
 window.exampleResetExampleInfo = function() {
     visitor.addInfo({
       'uuid': 'abcd-1234-5678-efgh',
@@ -60,6 +56,10 @@ window.exampleSuggestTemplate = function() {
 
 window.examplePrefillForm = function() {
     visitor.populateForm('#example-form');
+};
+
+window.updateLog = function() {
+    document.querySelector('#log').textContent = JSON.stringify(visitor.info);
 };
 
 updateLog();
