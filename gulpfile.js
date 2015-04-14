@@ -1,7 +1,9 @@
 var browserify = require('browserify');
+var buffer = require('vinyl-buffer');
 var gulp = require('gulp');
+var gutil = require('gulp-util');
 var less = require('gulp-less');
-var transform = require('vinyl-transform');
+var source = require('vinyl-source-stream');
 
 gulp.task('default', ['watch', 'js', 'less']);
 
@@ -11,17 +13,15 @@ gulp.task('watch', function() {
 });
 
 gulp.task('js', function() {
-    var browserified = transform(function(filename) {
-        var b = browserify({
-            entries: filename,
-            debug: false
-        });
-
-        return b.bundle();
+    var b = browserify({
+        entries: './src/js/index.js',
+        debug: false
     });
 
-    return gulp.src('./src/js/index.js')
-        .pipe(browserified)
+    return b.bundle()
+        .pipe(source('index.js'))
+        .pipe(buffer())
+        .on('error', gutil.log)
         .pipe(gulp.dest('./public/js/'));
 });
 
