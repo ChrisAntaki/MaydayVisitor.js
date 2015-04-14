@@ -62,8 +62,6 @@ window.examplePrefillForm = function() {
     visitor.populateForm('#example-form');
 };
 
-window.example
-
 updateLog();
 
 },{"./MaydayVisitor":2}],2:[function(require,module,exports){

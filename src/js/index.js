@@ -61,6 +61,4 @@ window.examplePrefillForm = function() {
     visitor.populateForm('#example-form');
 };
 
-window.example
-
 updateLog();
